@@ -31,7 +31,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/send-mail",
+        "https://abhrajit-debnath-dsam0rblb-abhrajit-debnaths-projects.vercel.app/send-mail",
         formdata
       );
 
