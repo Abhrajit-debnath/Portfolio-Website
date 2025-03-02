@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-mid-md :56rem;
+  --breakpoint-1xl:88rem;
+  --font-primary: "sora", "sans-serif";
+  --font-secondary: "poppins", "sans-serif";
+  --text-medium-smaller: 0.85rem;
+  --text-medium : 2.5rem;
+  --text-5.5xl: 2.5rem;
+  --text-5.7xl: 2.8rem;
+  --text-5.8xl: 3rem;
+  --text-6.5xl:4rem;
+  --color-primary: #8750F7;
+  --color-circle:#8750f7c2;
+  --color-secondary: #351B68;
+
+}
+

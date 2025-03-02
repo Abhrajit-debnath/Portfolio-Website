@@ -1,0 +1,28 @@
+body {
+  background: #0f0715;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 8px;
+  min-height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8750f7;
+}
+
+/* Scrollbar Track (Non-draggable area) */
+::-webkit-scrollbar-track {
+  background: #2e1a47; /* Slightly darker background for contrast */
+}
+
+/* Optional: Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a0497; /* Lighter purple on hover */
+}
