@@ -59,7 +59,7 @@ const PORT = process.env.PORT || 3000;
 
 // ✅ Allow requests from your frontend domain
 app.use(cors({
-  origin: "https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app/",  // Change this to your frontend domain
+  origin: "https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",  // Change this to your frontend domain
   methods: "GET,POST",
   allowedHeaders: "Content-Type"
 }));
@@ -74,7 +74,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.post("/send-mail", async (req, res) => {
+app.post("/api/send-mail", async (req, res) => {
   console.log("Received request:", req.body);
 
   const { firstName, lastName, email, mobileNumber, message } = req.body;
