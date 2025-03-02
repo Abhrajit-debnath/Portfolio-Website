@@ -49,7 +49,15 @@
 // });
 
 
+import express from "express";
+import cors from "cors";
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
+ const app = express();
+const PORT = process.env.PORT || 3000;  
+app.use(cors());
+app.use(express.json());
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -86,3 +94,6 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to send email", details: error.message });
   }
 }
+ app.listen(PORT, () => {
+   console.log("server is listening at port", PORT);
+ });
