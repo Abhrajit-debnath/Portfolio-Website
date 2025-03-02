@@ -186,7 +186,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 1.5, ease: "backInOut" }}
-          className="text-white font-primary pb-3 mid-md:h-28 xl:h-30 1xl:h-33 2xl:h-40 text-4xl font-bold leading-[50px] lg:text-5.5xl xl:text-5.7xl xl:leading-[55px] 1xl:text-5.8xl 1xl:leading-[62px] 2xl:text-6xl 2xl:leading-[72px]"
+          className="text-white font-primary pb-3 mid-md:h-30 xl:h-30 1xl:h-33 2xl:h-40 text-4xl font-bold leading-[50px] lg:text-5.5xl xl:text-5.7xl xl:leading-[55px] 1xl:text-5.8xl 1xl:leading-[62px] 2xl:text-5.9xl 2xl:leading-[72px]"
         >
           {heading}
         </motion.h1>
