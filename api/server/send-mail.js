@@ -4,8 +4,7 @@
 // import dotenv from "dotenv";
 // dotenv.config();
 // const app = express();
-// const PORT = process.env.PORT || 3000;  
-
+// const PORT = process.env.PORT || 3000;
 
 // app.use(cors());
 // app.use(express.json());
@@ -56,7 +55,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;  
+const PORT = process.env.PORT || 3000;
 
 // ✅ Check if .env variables exist
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
@@ -65,15 +64,14 @@ if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
 }
 
 // ✅ CORS Config (Allow Frontend)
-app.use(cors({
-  origin: [
-    "https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",
-    "https://abhrajit-debnathdev.vercel.app"
-  ],
-  methods: "GET, POST",
-  allowedHeaders: "Content-Type",
-  credentials: true,  // ✅ Allow secure requests
-}));
+app.use(
+  cors({
+    origin: "https://abhrajit-debnathdev.vercel.app",
+    methods: "GET, POST",
+    allowedHeaders: "Content-Type",
+    credentials: true, // ✅ Allow secure requests
+  })
+);
 
 app.use(express.json());
 
@@ -83,8 +81,8 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
-  debug: true,  // ✅ Enable debugging
-  logger: true  // ✅ Log sending process
+  debug: true, // ✅ Enable debugging
+  logger: true, // ✅ Log sending process
 });
 
 app.post("/api/send-mail", async (req, res) => {
@@ -109,11 +107,12 @@ app.post("/api/send-mail", async (req, res) => {
     res.json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
     console.error("❌ Email sending failed:", error);
-    res.status(500).json({ error: "Failed to send email", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Failed to send email", details: error.message });
   }
 });
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is listening at port ${PORT}`);
 });
-
