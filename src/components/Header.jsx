@@ -50,9 +50,11 @@ function Header() {
               >
                 <a
                   href={`${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  onClick={(e)=>{
-                    e.preventDefault()
-                    document.getElementById(item.toLowerCase().replace(/\s+/g, "-")).scrollIntoView({behavior:"smooth",block:"center"})
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById(item.toLowerCase().replace(/\s+/g, "-"))
+                      .scrollIntoView({ behavior: "smooth", block: "center" });
                   }}
                   className={
                     "border border-transparent font-primary text-sm lg:text-base transition-all duration-200"
@@ -81,17 +83,24 @@ function Header() {
               {["Home", "About Me", "Skills", "Projects", "Contact"].map(
                 (item, index) => (
                   <li key={index}>
-                    <NavLink
-                      to={`/${item.toLowerCase().replace(/\s+/g, "")}`}
-                      onClick={() => settogglehamburger(false)}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "border border-primary rounded-full px-5 py-2 font-primary text-base sm:text-lg"
-                          : "px-5 py-2 font-primary text-base sm:text-lg"
-                      }
+                    <a
+                      href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById(
+                            item.toLowerCase().replace(/\s+/g, "-")
+                          )
+                          .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        settogglehamburger(false);
+                      }}
+                      className={"px-5 py-2 font-primary text-base sm:text-lg"}
                     >
                       {item}
-                    </NavLink>
+                    </a>
                   </li>
                 )
               )}

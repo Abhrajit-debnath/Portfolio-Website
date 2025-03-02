@@ -52,14 +52,14 @@ function Hero() {
 
   return (
     <div className="mid-md:mb-48 mb-36 mt-15 lg:mt-0 lg:h-[650px] lg:mb-28 xl:h-[750px] xl:mt-0 top pt-5 w-full text-center relative mid-md:flex mid-md:justify-between mid-md:text-left mid-md:items-center">
-      <div className="w-50 h-50 bg-circle absolute rounded-full blur-[150px] top-70 right-0 -z-1 mid-md:top-50 mid-md:w-70 mid-md:h-70 mid-md:blur-[250px]"></div>
+      <div className="w-50 h-50 bg-circle absolute rounded-full blur-[150px] top-70 right-0 -z-1 mid-md:-top-50 mid-md:w-70 mid-md:h-70 mid-md:blur-[250px]"></div>
       <motion.img
         initial={{ x: 0, y: 0 }}
         animate={{ x: 3, y: 15 }}
         transition={{ repeat: Infinity, duration: 3, repeatType: "mirror" }}
         src="/assets/shape.png"
         alt="shape"
-        className="w-10 absolute -top-8 right-10 md:w-10 md:right-30 md:top-10 mid-md:left-76 mid-md:top-18 mid-md:w-12 xl:top-24 xl:left-80 2xl:left-96 2xl:top-30"
+        className="w-10 absolute -top-8 right-10 md:w-10 md:right-30 md:top-10 mid-md:left-76 mid-md:top-5 mid-md:w-12 xl:top-24 xl:left-80 2xl:left-96 2xl:top-40"
       />
       <div className="flex flex-col gap-3 mid-md:hidden">
         <div className="flex items-center justify-center">
