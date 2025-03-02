@@ -52,17 +52,27 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;  
 
-// ✅ Allow requests from your frontend domain
+// ✅ Check if .env variables exist
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  console.error("❌ Missing EMAIL_USER or EMAIL_PASS in .env file");
+  process.exit(1);
+}
+
+// ✅ CORS Config (Allow Frontend)
 app.use(cors({
-  origin:["https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",
-    "https://abhrajit-debnathdev.vercel.app"],  // Change this to your frontend domain
-  methods: "GET,POST",
-  allowedHeaders: "Content-Type"
+  origin: [
+    "https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",
+    "https://abhrajit-debnathdev.vercel.app"
+  ],
+  methods: "GET, POST",
+  allowedHeaders: "Content-Type",
+  credentials: true,  // ✅ Allow secure requests
 }));
 
 app.use(express.json());
@@ -73,6 +83,8 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  debug: true,  // ✅ Enable debugging
+  logger: true  // ✅ Log sending process
 });
 
 app.post("/api/send-mail", async (req, res) => {
@@ -93,14 +105,15 @@ app.post("/api/send-mail", async (req, res) => {
 
   try {
     const info = await transporter.sendMail(mailoptions);
-    console.log("Email sent successfully:", info.response);
+    console.log("✅ Email sent successfully:", info.response);
     res.json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("❌ Email sending failed:", error);
     res.status(500).json({ error: "Failed to send email", details: error.message });
   }
 });
 
 app.listen(PORT, () => {
-  console.log("server is listening at port", PORT);
+  console.log(`🚀 Server is listening at port ${PORT}`);
 });
+
