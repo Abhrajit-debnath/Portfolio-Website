@@ -6,8 +6,8 @@
   "type": "module",
   "main": "api/send-mail.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node api/send-mail.js",
+    "dev": "nodemon api/send-mail.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
