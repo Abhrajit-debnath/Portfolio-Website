@@ -59,7 +59,8 @@ const PORT = process.env.PORT || 3000;
 
 // ✅ Allow requests from your frontend domain
 app.use(cors({
-  origin: "https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",  // Change this to your frontend domain
+  origin:["https://abhrajit-debnath-m1qs880ut-abhrajit-debnaths-projects.vercel.app",
+    "https://abhrajit-debnathdev.vercel.app"],  // Change this to your frontend domain
   methods: "GET,POST",
   allowedHeaders: "Content-Type"
 }));
