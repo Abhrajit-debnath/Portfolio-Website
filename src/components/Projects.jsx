@@ -21,6 +21,7 @@ const Projects = () => {
           "testspotify",
           "Sigma-Web-Dev-Course",
           "100-days-of-code-youtube",
+          "Portfolio-Website"
         ];
         let repos = response.data.filter(
           (repo) => !excludedRepos.includes(repo.name)
