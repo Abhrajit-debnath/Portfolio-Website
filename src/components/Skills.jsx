@@ -13,10 +13,10 @@ const Skills = () => {
     { name: "JavaScript", img: "/assets/js.svg", progress: 80 },
     { name: "Tailwind CSS", img: "/assets/tailwindcss.svg", progress: 90 },
     { name: "Bootstrap", img: "/assets/bootstrap.png", progress: 75 },
-    { name: "React", img: "/assets/react.svg", progress: 80 },
-    { name: "Node.js", img: "/assets/nodejs.svg", progress: 70 },
-    { name: "Express", img: "/assets/expressjs.png", progress: 60 },
-    { name: "MongoDB", img: "/assets/mongodb.png", progress: 65 },
+    { name: "React", img: "/assets/react.svg", progress: 70 },
+    { name: "Node.js", img: "/assets/nodejs.svg", progress: 50 },
+    { name: "Express", img: "/assets/expressjs.png", progress: 50 },
+    { name: "MongoDB", img: "/assets/mongodb.png", progress: 50 },
   ];
 
   return (
