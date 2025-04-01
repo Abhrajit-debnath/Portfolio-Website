@@ -30,10 +30,8 @@ const Contact = () => {
     seterrors([]);
 
     try {
-      const response = await axios.post(
-        "/api/send-mail",
-        formdata
-      );
+      const response = await axios.post("https://abhrajit-debnathdev.vercel.app/api/send-mail", formdata);
+
 
       if (response.status === 200) {
         toast.success("Message Sent Successfully! ✅");
